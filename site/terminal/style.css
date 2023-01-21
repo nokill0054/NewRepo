@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{-webkit-tap-highlight-color: transparent;}
+*,html,body,div,input,textarea,select,span,a,button,table,tr,td,th,ul,ol,li,button{ outline: none; outline-color: transparent; outline-width: 0; outline-style: none; outline-offset: initial; margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; }
+a,a:focus,a:hover,a:active,a:visited{ text-decoration: none; }
+ul,ol,li{ list-style: none; list-style-type: none; }
+
+body {
+    background-color: #131722;
+    color: gainsboro;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header .coin-name { 
+    padding-right: 50px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.header-right {
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color: #0E1621;
+}
+.header-right img {
+    padding-top: 7px;
+}
+.header-right svg {
+    padding: 0px 10px;
+    width: 20px;
+}
+
+.header .items {
+    display: flex; 
+    align-items: center; 
+    position: relative;
+    padding: 0px 15px;
+}
+
+.header .items:before {
+    position: absolute;
+    content:""; 
+    width: 1px; 
+    height: 22px; 
+    background: #fff; 
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.header .items .interval {
+    padding: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.header .items .interval.active {
+    color: #2962FF;
+    pointer-events: none;
+}
+.header .items .interval:hover { color: #2962FF; }
+
+.header .items .chart-style { cursor: pointer; }
+.header .items .chart-style.active {
+    color: #2962FF;
+    pointer-events: none;
+}
+.header .items .chart-style:hover { color: #2962FF; }
+
+.header .items .item {
+    color: #fff;
+    transition: .2s;
+    padding: 5px;
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.header .items .item svg { 
+    height: 20px; 
+    display: block; 
+}
+
+.header .items .item:hover { color: #2962FF; }
+
+.header-other {
+    width: 40px;
+}
+.header-other svg {
+    padding-top: 5px;
+}
+
+/* LINES */
+
+.line-horizontal {
+    content: "";
+    height: 3px;
+    background: #2A2E39;
+    position: relative;
+}
+.line-vertical {
+    content: "";
+    width: 3px;
+    background: #2A2E39;
+    position: relative;
+}
+
+/* ABBR */
+
+abbr {
+    position: relative;
+    text-decoration: none;
+    z-index: 5;
+}
+
+abbr:hover::after {
+    position: absolute;    
+    display: flex;
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    content: attr(title);
+    padding: 5px 10px;
+    margin-left: -100%;
+    border-radius: 10px;
+    min-width: 60px;
+    top: 100%;
+    font-size: 12px;
+}
+
+.chart-style abbr:hover::after { min-width: 75px; }
+
+/* CONTENT */
+
+.content {
+    background-color: #1f232d;
+    position: relative;
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+.chart {
+    position: relative;
+    flex: 0 0 calc(100% - 496px);
+    max-width: calc(100% - 496px);
+}
+
+.right-panel {
+    position: relative;
+    background-color: #031134;
+    flex-direction: column;
+    display: flex;
+    flex: 0 0 450px;
+    max-width: 450px;
+}
+
+.coin-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #0E1621;
+  	user-select: none;
+    height: 45%;
+}
+
+.head {
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    flex: 1;
+}
+.head .list-selector {
+    font-weight: bold;
+    padding: 10px;
+}
+.head .list-selector:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.head .list-selector .options {
+    display: none;
+}
+.head .list-selector .options.active {
+    position: absolute;
+    display: block;
+    width: 225px;
+    height: 150px;
+    background-color: #141A2A;
+    margin-top: 10px;
+}
+.options .option:nth-child(1) {
+    padding: 15px 0px;
+    border-top: none;
+    display: flex;
+    justify-content: start;
+}
+.options .option svg {
+    padding: 0px 10px;
+}
+.options .option {
+    text-align: center;
+    padding: 5px 15px;
+    border-top: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.options .option:hover {
+    opacity: 0.7;
+}
+
+.head .search-bar-input {
+    position: relative;
+    width: 50%;
+    height: 30px;
+    background-color: #353944;
+    border-radius: 5px;
+    margin: 5px;
+    border-style: none;
+    padding-left: 7px;
+    max-width: 160px;
+    display: flex;
+    justify-content: space-between;
+}
+.search-bar-input .search-bar {
+    width: 70%;
+    border: none;
+    background-color: #353944;
+    color: white;
+}
+.search-bar-input svg {
+    width: 20px;
+    padding-right: 7px;
+}
+
+.list .coins {
+    padding: 5px 10px;
+    overflow-y: scroll;
+    height: calc((100vh - 42px - 40px) / 2 - 42px);
+    min-height: 300px;
+}
+.coins{ background: #0E1621; }
+.coins table { width: 430px; }
+.coins .coins-table tr th{ border-bottom: 2px solid #2A2E39; text-align: right; padding: 5px; color: #93969E;}
+.coins .coins-table tr th:nth-child(1){ text-align: left; }
+.coins .coins-table tr th:nth-child(2){ padding-right: 20px; }
+.coins .coins-table tr th:nth-child(3){ padding-right: 20px; }
+.coins .coins-table tr td{ border-bottom: 2px solid #2A2E39; text-align: right; padding: 5px; font-size: 14px;}
+.coins .coins-table tr td:nth-child(1){ text-align: left; }
+.coins .coins-table tr td:nth-child(2){ padding-right: 20px; }
+.coins .coins-table tr td:nth-child(3){ padding-right: 20px; }
+
+.coins .coin:hover {
+    background-color: #22282f;
+    cursor: pointer;
+}
+
+.bots {
+    background-color: #0E1621;
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+}
+.bots .tabs {
+    height: 25px;
+    flex-direction: row;
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 23px;
+}
+.tabs .tab {
+    width: 95px;
+    height: 25px;
+    text-align: center;
+    background-color: #0E1621;
+}
+.tabs .tab:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.tabs .tab.active {
+    background-color: #398DFA;
+}
+.bots .contents {
+    flex: 2;
+    height: 25%;
+}
+.contents .content {
+    background-color: #0E1621;
+    display: none;
+    height: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+    padding: 0px 15px;
+}
+.contents .content.active {
+    display: block;
+}
+
+.btc-value {
+    background-color: #131722;
+    height: 9%;
+    min-height: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.btc-value .coin-name {
+    padding-top: 5px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    flex: 1;
+}
+.btc-value .arrow.up {
+    color: #00DC3B;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+.btc-value .arrow.down {
+    color: #FF0000;
+    margin-top: 10px;
+    margin-right: 5px;
+    transform: rotate(180deg);
+}
+.btc-value .price{
+    flex: 3;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -5px;
+    padding-left: 15px;
+    display: flex;
+}
+
+.other-side {
+    width: 40px;
+    min-width: 30px;
+}
+.other-side svg {
+    padding: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    position: relative;
+    background-color: #131722;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+.footer-left {
+    max-width: calc(100% - 496px);
+    width: calc(100% - 496px);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    border-right: 3px solid #2A2E39;
+}
+.footer-left svg {
+    padding-top: 11px;
+    padding-left: 5px;
+}
+.right-side {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 350px;
+    min-width: 260px;
+    padding: 10px;
+}
+.footer-right {
+    position: relative;
+    margin-top: 10px;
+    height: 100%;
+}
+.footer-right img{
+    padding-right: 10px;
+}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #181C24;  }
+::-webkit-scrollbar-thumb { background: #888;  }
+::-webkit-scrollbar-thumb:hover { background: #555;  }

@@ -1,0 +1,25 @@
+.message{
+    padding: 7px;
+    margin: 14px 0px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    display: table-caption;
+    background-color: #182533;
+    color: #cacaca;
+    max-width: 75vw;
+    min-width: 40%;
+    font-size: 12px;
+    display: table;
+}
+
+.message div{
+    color: #727e8c;
+    text-align: end;
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+.message a{
+    text-decoration: none;
+    color: #3e71ff;
+}
